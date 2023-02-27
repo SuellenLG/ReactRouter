@@ -1,8 +1,11 @@
 import React from 'react'
 import './assets/css/base/base.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 import Home from './paginas/Home'
 import Sobre from './paginas/Sobre'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Pagina404 from './paginas/Paginas404'
+import Cabecalho from './components/Cabecalho'
 
 function App() {
 
@@ -10,7 +13,9 @@ function App() {
   return (
     <>
       <Router>
+        <Cabecalho />
         <Switch>
+
           <Route exact path='/'>
             <Home />
           </Route>
@@ -18,6 +23,11 @@ function App() {
           <Route path='/sobre'>
             <Sobre />
           </Route>
+
+          <Route >
+            <Pagina404 />
+          </Route>
+
         </Switch>
 
 
@@ -33,7 +43,7 @@ export default App
 
 /*
 
-caminhar por varias rotas dependendo da URL:
+exibir varias rotas (dependendo da URL):
 function App() {
   const Render = () => {
     const location = window.location.pathname
