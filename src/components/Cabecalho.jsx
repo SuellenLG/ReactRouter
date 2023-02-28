@@ -1,31 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import imagem from "../assets/img/doguito.svg"
 import "../assets/css/componentes/cabecalho.css"
 
 const Cabecalho = () => {
-    return(
+    return (
         <header className="cabecalho container">
             <div className="menu-hamburguer">
                 <span className="menu-hamburguer_icone">
                 </span>
             </div>
             <div className="cabecalho-container">
-                <a href="/" className="flex flex--centro" >
-                    <img className="cabecalho__logo" src={imagem} alt="Logo doguito"/>
+                <Link to="/" className="flex flex--centro" >
+                    <img className="cabecalho__logo" src={imagem} alt="Logo doguito" />
                     <h1 className="cabecalho__titulo">PetShop</h1>
-                </a>
+                </Link>
             </div>
 
             <nav className="menu-cabecalho">
                 <ul className="menu-itens">
                     <li>
-                        <a href="#" className="menu-item">Produto</a>
+                        <Link to="#" className="menu-item menu-item--entrar">Entrar</Link>
                     </li>
                     <li>
-                        <a href="/" className="menu-item">Blog</a>
+                        <Link to="#" className="menu-item">Produto</Link>
                     </li>
                     <li>
-                        <a href="/sobre" className="menu-item">Sobre</a>
+                        <Link to="/" className="menu-item">Blog</Link>
+                    </li>
+                    <li>
+                        <Link to="/sobre" className="menu-item">Sobre</Link>
                     </li>
                 </ul>
             </nav>
